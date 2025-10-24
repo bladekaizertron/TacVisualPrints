@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {
   "name": "tac-visual-prints",
   "version": "1.0.0",
@@ -38,44 +37,3 @@
     "not dead"
   ]
 }
-=======
-{
-  "name": "tac-visual-prints",
-  "version": "1.0.0",
-  "description": "Professional printing services website for Tac Visual Prints",
-  "main": "js/main.js",
-  "type": "module",
-  "scripts": {
-    "dev": "php -S localhost:8000",
-    "build": "echo 'Build process would go here'",
-    "test": "echo 'Tests would go here'",
-    "lint": "echo 'Linting would go here'"
-  },
-  "keywords": [
-    "printing",
-    "sublimation",
-    "tarpaulin",
-    "t-shirts",
-    "backdrops",
-    "signage",
-    "DTF",
-    "website"
-  ],
-  "author": "Tac Visual Prints",
-  "license": "MIT",
-  "devDependencies": {
-    "autoprefixer": "^10.4.16",
-    "postcss": "^8.4.31",
-    "tailwindcss": "^3.3.5"
-  },
-  "dependencies": {
-    "aos": "^2.3.4",
-    "font-awesome": "^6.4.0"
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ]
-}
->>>>>>> 99fe9515dcc882a870f2359ab5c08b375f0eabe7

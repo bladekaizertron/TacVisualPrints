@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 /**
  * Animation Module
  * Tac Visual Prints - Animation Controller
@@ -283,7 +283,7 @@ export class AnimationController {
         this.animationElements.clear();
     }
 }
-=======
+
 /**
  * Animation Module
  * Tac Visual Prints - Animation Controller
@@ -568,4 +568,4 @@ export class AnimationController {
         this.animationElements.clear();
     }
 }
->>>>>>> 99fe9515dcc882a870f2359ab5c08b375f0eabe7
+

@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 /**
  * Chatbot Module
  * Tac Visual Prints - Interactive Chatbot
@@ -309,7 +309,7 @@ export class TVPChatbot {
         }
     }
 }
-=======
+
 /**
  * Chatbot Module
  * Tac Visual Prints - Interactive Chatbot
@@ -620,4 +620,4 @@ export class TVPChatbot {
         }
     }
 }
->>>>>>> 99fe9515dcc882a870f2359ab5c08b375f0eabe7
+

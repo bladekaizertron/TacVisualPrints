@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Tac Visual Prints - Project Structure
 
 ## 📁 Directory Structure
@@ -169,7 +168,6 @@ PROJECT1/
 - **Reduced bundle sizes**
 
 This new structure provides a solid foundation for maintaining and expanding your Tac Visual Prints website!
-=======
 # Tac Visual Prints - Project Structure
 
 ## 📁 Directory Structure
@@ -340,4 +338,3 @@ PROJECT1/
 - **Reduced bundle sizes**
 
 This new structure provides a solid foundation for maintaining and expanding your Tac Visual Prints website!
->>>>>>> 99fe9515dcc882a870f2359ab5c08b375f0eabe7

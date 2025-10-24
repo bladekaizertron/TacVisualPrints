@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 /**
  * Utility Functions
  * Tac Visual Prints - Utility Module
@@ -261,7 +261,7 @@ export function announceToScreenReader(message) {
         document.body.removeChild(announcement);
     }, 1000);
 }
-=======
+
 /**
  * Utility Functions
  * Tac Visual Prints - Utility Module
@@ -524,4 +524,4 @@ export function announceToScreenReader(message) {
         document.body.removeChild(announcement);
     }, 1000);
 }
->>>>>>> 99fe9515dcc882a870f2359ab5c08b375f0eabe7
+

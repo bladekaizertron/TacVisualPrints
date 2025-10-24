@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 /**
  * Main JavaScript File
  * Tac Visual Prints - Main Application
@@ -326,7 +326,7 @@ document.addEventListener('visibilitychange', function() {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = { TVPApplication, CONFIG };
 }
-=======
+
 /**
  * Main JavaScript File
  * Tac Visual Prints - Main Application
@@ -654,4 +654,4 @@ document.addEventListener('visibilitychange', function() {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = { TVPApplication, CONFIG };
 }
->>>>>>> 99fe9515dcc882a870f2359ab5c08b375f0eabe7
+

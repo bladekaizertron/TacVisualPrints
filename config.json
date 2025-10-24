@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {
   "site": {
     "name": "Tac Visual Prints",
@@ -35,41 +34,3 @@
     "facebookPixel": ""
   }
 }
-=======
-{
-  "site": {
-    "name": "Tac Visual Prints",
-    "description": "Professional printing services including sublimation, tarpaulin printing, custom t-shirts, event backdrops, and signage solutions.",
-    "url": "https://tacvisualprints.com",
-    "version": "1.0.0"
-  },
-  "contact": {
-    "phone": "+63 (XXX) XXX-XXXX",
-    "email": "info@tacvisualprints.com",
-    "address": "Your Business Address Here",
-    "businessHours": "Mon - Fri: 8:00 AM - 6:00 PM"
-  },
-  "social": {
-    "facebook": "https://facebook.com/tacvisualprints",
-    "instagram": "https://instagram.com/tacvisualprints",
-    "twitter": "https://twitter.com/tacvisualprints",
-    "youtube": "https://youtube.com/tacvisualprints"
-  },
-  "features": {
-    "chatbot": true,
-    "animations": true,
-    "parallax": true,
-    "paintSplash": true,
-    "counterAnimations": true
-  },
-  "performance": {
-    "preloadImages": true,
-    "lazyLoading": true,
-    "minifyAssets": false
-  },
-  "analytics": {
-    "googleAnalytics": "",
-    "facebookPixel": ""
-  }
-}
->>>>>>> 99fe9515dcc882a870f2359ab5c08b375f0eabe7

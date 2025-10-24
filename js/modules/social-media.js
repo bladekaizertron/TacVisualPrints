@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 /**
  * Social Media Module
  * Tac Visual Prints - Social Media Icons Enhancement
@@ -265,7 +265,7 @@ if (!document.querySelector('#social-media-styles')) {
     style.textContent = rippleKeyframes;
     document.head.appendChild(style);
 }
-=======
+
 /**
  * Social Media Module
  * Tac Visual Prints - Social Media Icons Enhancement
@@ -532,4 +532,4 @@ if (!document.querySelector('#social-media-styles')) {
     style.textContent = rippleKeyframes;
     document.head.appendChild(style);
 }
->>>>>>> 99fe9515dcc882a870f2359ab5c08b375f0eabe7
+
