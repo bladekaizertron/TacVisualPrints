@@ -1,0 +1,232 @@
+/* ===== SOCIAL MEDIA ICONS ===== */
+/* Tac Visual Prints - Social Media Component */
+
+.social-media-icons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.social-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.social-icon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.social-icon:hover::before {
+  left: 100%;
+}
+
+.social-icon:hover {
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.social-icon:active {
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* Facebook */
+.social-icon--facebook {
+  background: linear-gradient(135deg, #1877f2, #0d65d9);
+}
+
+.social-icon--facebook:hover {
+  background: linear-gradient(135deg, #0d65d9, #0a4d9c);
+  box-shadow: 0 8px 25px rgba(24, 119, 242, 0.4);
+}
+
+/* Instagram */
+.social-icon--instagram {
+  background: linear-gradient(135deg, #e4405f, #c13584, #833ab4);
+}
+
+.social-icon--instagram:hover {
+  background: linear-gradient(135deg, #c13584, #833ab4, #5851db);
+  box-shadow: 0 8px 25px rgba(228, 64, 95, 0.4);
+}
+
+/* Twitter */
+.social-icon--twitter {
+  background: linear-gradient(135deg, #1da1f2, #0d8bd9);
+}
+
+.social-icon--twitter:hover {
+  background: linear-gradient(135deg, #0d8bd9, #0a6bb3);
+  box-shadow: 0 8px 25px rgba(29, 161, 242, 0.4);
+}
+
+/* YouTube */
+.social-icon--youtube {
+  background: linear-gradient(135deg, #ff0000, #cc0000);
+}
+
+.social-icon--youtube:hover {
+  background: linear-gradient(135deg, #cc0000, #990000);
+  box-shadow: 0 8px 25px rgba(255, 0, 0, 0.4);
+}
+
+/* Icon Styles */
+.social-icon i {
+  font-size: 1.25rem;
+  color: white;
+  transition: all 0.3s ease;
+  z-index: 1;
+  position: relative;
+}
+
+.social-icon:hover i {
+  transform: scale(1.1);
+}
+
+/* Fallback text styling */
+.fallback-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: white;
+  display: none;
+  z-index: 2;
+}
+
+/* Show fallback when Font Awesome fails to load */
+.social-icon:not(.fa-loaded) .fallback-text {
+  display: block;
+}
+
+.social-icon:not(.fa-loaded) i {
+  display: none;
+}
+
+/* Fallback for when Font Awesome doesn't load */
+.social-icon i::before {
+  content: attr(data-fallback);
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+
+/* Loading state */
+.social-icon.loading {
+  animation: pulse 2s infinite;
+}
+
+/* Accessibility */
+.social-icon:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+
+.social-icon:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .social-media-icons {
+    gap: 0.75rem;
+  }
+  
+  .social-icon {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .social-icon i {
+    font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .social-media-icons {
+    gap: 0.5rem;
+  }
+  
+  .social-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .social-icon i {
+    font-size: 1rem;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .social-icon {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .social-icon:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .social-icon {
+    border: 2px solid white;
+  }
+  
+  .social-icon:hover {
+    border-color: rgba(255, 255, 255, 0.8);
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .social-icon {
+    transition: none;
+  }
+  
+  .social-icon:hover {
+    transform: none;
+  }
+  
+  .social-icon::before {
+    display: none;
+  }
+}
+
+/* Animation for icon entrance */
+@keyframes socialIconSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.social-icon {
+  animation: socialIconSlideIn 0.6s ease-out;
+}
+
+.social-icon:nth-child(1) { animation-delay: 0.1s; }
+.social-icon:nth-child(2) { animation-delay: 0.2s; }
+.social-icon:nth-child(3) { animation-delay: 0.3s; }
+.social-icon:nth-child(4) { animation-delay: 0.4s; }

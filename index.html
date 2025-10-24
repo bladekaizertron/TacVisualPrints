@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tac Visual Prints - Professional Printing Solutions</title>
+    <meta name="description" content="Professional printing services including sublimation, tarpaulin printing, custom t-shirts, event backdrops, and signage solutions.">
+    <meta name="keywords" content="printing, sublimation, tarpaulin, t-shirts, backdrops, signage, DTF printing">
+    
+    <!-- External Resources -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <!-- Fallback for Font Awesome -->
+    <link href="https://use.fontawesome.com/releases/v6.5.1/css/all.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { 
+              sans: ["Inter", "ui-sans-serif", "system-ui"],
+              serif: ["Playfair Display", "ui-serif", "Georgia"]
+            },
+            colors: {
+              tvp: {
+                primary: '#6366f1',
+                secondary: '#8b5cf6',
+                accent: '#f59e0b',
+                dark: '#0f172a',
+                light: '#f8fafc'
+              }
+            },
+            animation: {
+              'float': 'float 6s ease-in-out infinite',
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'bounce-slow': 'bounce 3s infinite',
+              'spin-slow': 'spin 8s linear infinite',
+              'gradient': 'gradient 15s ease infinite',
+              'shimmer': 'shimmer 2s linear infinite',
+              'glow': 'glow 2s ease-in-out infinite alternate'
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0px)' },
+                '50%': { transform: 'translateY(-20px)' }
+              },
+              gradient: {
+                '0%, 100%': { backgroundPosition: '0% 50%' },
+                '50%': { backgroundPosition: '100% 50%' }
+              },
+              shimmer: {
+                '0%': { transform: 'translateX(-100%)' },
+                '100%': { transform: 'translateX(100%)' }
+              },
+              glow: {
+                '0%': { boxShadow: '0 0 20px rgba(99, 102, 241, 0.5)' },
+                '100%': { boxShadow: '0 0 40px rgba(99, 102, 241, 0.8)' }
+              }
+            },
+            backgroundImage: {
+              'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+              'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+            }
+          }
+        }
+      }
+    </script>
+    
+    <!-- Modular CSS -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/components/buttons.css">
+    <link rel="stylesheet" href="css/components/chatbot.css">
+    <link rel="stylesheet" href="css/components/social-media.css">
+    
+    <!-- Inline CSS for immediate icon display -->
+    <style>
+        .social-icon {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .social-icon svg {
+            width: 20px;
+            height: 20px;
+            color: white;
+            transition: all 0.3s ease;
+            z-index: 1;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-4px) scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .social-icon:hover svg {
+            transform: scale(1.1);
+        }
+        
+        /* Facebook */
+        .social-icon--facebook {
+            background: linear-gradient(135deg, #1877f2, #0d65d9);
+        }
+        
+        .social-icon--facebook:hover {
+            background: linear-gradient(135deg, #0d65d9, #0a4d9c);
+            box-shadow: 0 8px 25px rgba(24, 119, 242, 0.4);
+        }
+        
+        /* Instagram */
+        .social-icon--instagram {
+            background: linear-gradient(135deg, #e4405f, #c13584, #833ab4);
+        }
+        
+        .social-icon--instagram:hover {
+            background: linear-gradient(135deg, #c13584, #833ab4, #5851db);
+            box-shadow: 0 8px 25px rgba(228, 64, 95, 0.4);
+        }
+        
+        /* Twitter */
+        .social-icon--twitter {
+            background: linear-gradient(135deg, #1da1f2, #0d8bd9);
+        }
+        
+        .social-icon--twitter:hover {
+            background: linear-gradient(135deg, #0d8bd9, #0a6bb3);
+            box-shadow: 0 8px 25px rgba(29, 161, 242, 0.4);
+        }
+        
+        /* YouTube */
+        .social-icon--youtube {
+            background: linear-gradient(135deg, #ff0000, #cc0000);
+        }
+        
+        .social-icon--youtube:hover {
+            background: linear-gradient(135deg, #cc0000, #990000);
+            box-shadow: 0 8px 25px rgba(255, 0, 0, 0.4);
+        }
+        
+        /* Animation for icon entrance */
+        @keyframes socialIconSlideIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px) scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        .social-icon {
+            animation: socialIconSlideIn 0.6s ease-out;
+        }
+        
+        .social-icon:nth-child(1) { animation-delay: 0.1s; }
+        .social-icon:nth-child(2) { animation-delay: 0.2s; }
+        .social-icon:nth-child(3) { animation-delay: 0.3s; }
+        .social-icon:nth-child(4) { animation-delay: 0.4s; }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .social-media-icons {
+                gap: 0.75rem;
+            }
+            
+            .social-icon {
+                width: 44px;
+                height: 44px;
+            }
+            
+            .social-icon svg {
+                width: 18px;
+                height: 18px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .social-media-icons {
+                gap: 0.5rem;
+            }
+            
+            .social-icon {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .social-icon svg {
+                width: 16px;
+                height: 16px;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 antialiased">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur supports-backdrop-blur:border-b border-white/20 transition-shadow">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-2">
+            <a href="#home" class="flex items-center gap-3">
+                <img src="assets/images/LOGO.svg" alt="Tac Visual Prints Logo" class="logo h-12 w-auto">
+            </a>
+            <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-700">
+                <li><a class="hover:text-tvp-primary" href="#home">Home</a></li>
+                <li><a class="hover:text-tvp-primary" href="#services">Services</a></li>
+                <li><a class="hover:text-tvp-primary" href="#portfolio">Portfolio</a></li>
+                <li><a class="hover:text-tvp-primary" href="#about">About</a></li>
+                <li><a class="hover:text-tvp-primary" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center text-center text-white overflow-hidden">
+        <!-- Background Video -->
+        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover">
+            <source src="assets/videos/hero-vid.mp4" type="video/mp4">
+            <!-- Fallback image if video doesn't load -->
+            <img src="https://images.unsplash.com/photo-1693031630369-bd429a57f115?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Hero background" class="absolute inset-0 w-full h-full object-cover">
+        </video>
+        <!-- Background Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-br from-slate-900/40 via-slate-800/30 to-slate-900/40"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-tvp-primary/10 via-tvp-secondary/10 to-tvp-accent/10"></div>
+        
+        <!-- Floating Elements -->
+        <div class="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full animate-float blur-sm floating-parallax-1"></div>
+        <div class="absolute top-40 right-20 w-32 h-32 bg-tvp-accent/20 rounded-full animate-float animation-delay-2000 blur-sm floating-parallax-2"></div>
+        <div class="absolute bottom-40 left-20 w-16 h-16 bg-tvp-secondary/30 rounded-full animate-float animation-delay-4000 blur-sm floating-parallax-3"></div>
+        <div class="absolute bottom-20 right-10 w-24 h-24 bg-white/10 rounded-full animate-float animation-delay-4000 blur-sm floating-parallax-1"></div>
+        
+        <!-- Geometric Shapes -->
+        <div class="absolute top-1/4 left-1/4 w-4 h-4 bg-white/60 rotate-45 animate-pulse-slow geometric-parallax-1"></div>
+        <div class="absolute top-1/3 right-1/3 w-6 h-6 bg-tvp-accent/80 rotate-12 animate-bounce-slow geometric-parallax-2"></div>
+        <div class="absolute bottom-1/3 left-1/3 w-8 h-8 bg-tvp-secondary/60 rotate-45 animate-spin-slow geometric-parallax-3"></div>
+        
+        <!-- Main Content -->
+        <div class="relative max-w-5xl mx-auto px-6 py-24 z-10 hero-parallax-1">
+            <!-- Badge -->
+            <div class="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-8 animate-fade-in hero-parallax-2">
+                <span class="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+                <span class="text-sm font-medium">Premium Printing Services</span>
+            </div>
+            
+            <!-- Main Heading -->
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight mb-6 hero-parallax-3">
+                <span class="bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent animate-shimmer">
+                    Professional
+                </span>
+                <br>
+                <span class="bg-gradient-to-r from-tvp-accent via-tvp-primary to-tvp-secondary bg-clip-text text-transparent">
+                    Printing Solutions
+                </span>
+            </h1>
+            
+            <!-- Subtitle -->
+            <p class="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
+                Transform your ideas into <span class="text-tvp-accent font-semibold">stunning visual masterpieces</span> with our cutting-edge printing technology and expert craftsmanship.
+            </p>
+            
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+                <a href="#services" class="btn btn-primary btn-lg">
+                    <span>Explore Our Services</span>
+                </a>
+                <a href="#portfolio" class="btn btn-outline btn-lg">
+                    <span class="flex items-center">
+                        <i class="fas fa-play mr-2"></i>
+                        View Our Work
+                    </span>
+                </a>
+            </div>
+            
+            <!-- Stats -->
+            <div class="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-tvp-accent mb-1 counter" data-target="500">0</div>
+                    <div class="text-sm text-white/70">Happy Clients</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-tvp-accent mb-1 counter" data-target="1000">0</div>
+                    <div class="text-sm text-white/70">Projects Done</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl md:text-4xl font-bold text-tvp-accent mb-1 counter" data-target="5">0</div>
+                    <div class="text-sm text-white/70">Years Experience</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <div class="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+                <div class="w-1 h-3 bg-white/60 rounded-full mt-2 animate-pulse"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+        <!-- Premium Background Effects -->
+        <div class="absolute inset-0">
+            <!-- Animated gradient orbs -->
+            <div class="absolute top-20 left-20 w-96 h-96 bg-gradient-to-r from-tvp-primary/20 to-tvp-secondary/20 rounded-full blur-3xl animate-pulse-slow"></div>
+            <div class="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-r from-tvp-accent/20 to-tvp-primary/20 rounded-full blur-3xl animate-pulse-slow animation-delay-2000"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-tvp-secondary/15 to-tvp-accent/15 rounded-full blur-3xl animate-pulse-slow animation-delay-4000"></div>
+            
+            <!-- Geometric patterns -->
+            <div class="absolute inset-0 opacity-5">
+                <div class="absolute top-32 left-32 w-2 h-2 bg-white rotate-45 animate-pulse-slow"></div>
+                <div class="absolute top-64 right-48 w-3 h-3 bg-tvp-accent rotate-12 animate-bounce-slow"></div>
+                <div class="absolute bottom-48 left-64 w-4 h-4 bg-tvp-primary rotate-45 animate-spin-slow"></div>
+                <div class="absolute bottom-32 right-32 w-2 h-2 bg-white rotate-12 animate-pulse-slow"></div>
+            </div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <!-- Premium Section Header -->
+            <div class="text-center max-w-4xl mx-auto mb-20">
+                <div class="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-tvp-primary/20 to-tvp-secondary/20 backdrop-blur-sm border border-tvp-primary/30 mb-8">
+                    <div class="w-3 h-3 bg-gradient-to-r from-tvp-primary to-tvp-secondary rounded-full mr-3 animate-pulse"></div>
+                    <span class="text-sm font-semibold text-tvp-primary">PREMIUM PRINTING SERVICES</span>
+                </div>
+                
+                <h2 class="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-8 leading-tight">
+                    <span class="bg-gradient-to-r from-tvp-accent via-tvp-primary to-tvp-secondary bg-clip-text text-transparent">
+                        Our Services
+                    </span>
+                </h2>
+                
+                <p class="text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto">
+                    Transform your ideas into <span class="text-tvp-accent font-semibold">stunning visual masterpieces</span> with our cutting-edge printing technology, premium materials, and expert craftsmanship.
+                </p>
+            </div>
+            
+            <!-- Premium Services Grid -->
+            <div class="grid gap-8 lg:grid-cols-2 xl:grid-cols-3 mb-16">
+                <!-- Clothing & Apparel - Premium Card -->
+                <div class="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl hover:shadow-tvp-primary/20 transition-all duration-700 hover:-translate-y-3 hover:scale-105 overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-rose-500/10 to-orange-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-rose-500/20 to-orange-500/20 rounded-full blur-2xl transform translate-x-16 -translate-y-16 group-hover:scale-150 transition-transform duration-700"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-16 h-16 bg-gradient-to-br from-rose-500 to-orange-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                            <i class="fas fa-tshirt text-2xl text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">Clothing & Apparel</h3>
+                                <p class="text-slate-300 text-sm">Premium garment printing</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 text-slate-200">
+                                <div class="w-2 h-2 bg-gradient-to-r from-rose-500 to-orange-500 rounded-full"></div>
+                                <span class="text-sm">Full Sublimation</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-slate-200">
+                                <div class="w-2 h-2 bg-gradient-to-r from-rose-500 to-orange-500 rounded-full"></div>
+                                <span class="text-sm">Customized T-Shirts</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-slate-200">
+                                <div class="w-2 h-2 bg-gradient-to-r from-rose-500 to-orange-500 rounded-full"></div>
+                                <span class="text-sm">Sports Uniforms</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-slate-200">
+                                <div class="w-2 h-2 bg-gradient-to-r from-rose-500 to-orange-500 rounded-full"></div>
+                                <span class="text-sm">DTF Printing</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 flex items-center text-tvp-accent font-semibold group-hover:translate-x-2 transition-transform duration-500">
+                            <span>Explore Collection</span>
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tarpaulins & Banners - Premium Card -->
+                <div class="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl hover:shadow-teal-500/20 transition-all duration-700 hover:-translate-y-3 hover:scale-105 overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-teal-500/10 to-emerald-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-teal-500/20 to-emerald-500/20 rounded-full blur-2xl transform translate-x-16 -translate-y-16 group-hover:scale-150 transition-transform duration-700"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-16 h-16 bg-gradient-to-br from-teal-500 to-emerald-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                            <i class="fas fa-image text-2xl text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">Tarpaulins & Banners</h3>
+                                <p class="text-slate-300 text-sm">Large format printing</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 text-slate-200">
+                                <div class="w-2 h-2 bg-gradient-to-r from-teal-500 to-emerald-500 rounded-full"></div>
+                                <span class="text-sm">Event Tarpaulins</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-slate-200">
+                                <div class="w-2 h-2 bg-gradient-to-r from-teal-500 to-emerald-500 rounded-full"></div>
+                                <span class="text-sm">Roll-up Banners</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-slate-200">
+                                <div class="w-2 h-2 bg-gradient-to-r from-teal-500 to-emerald-500 rounded-full"></div>
+                                <span class="text-sm">Storefront Banners</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-slate-200">
+                                <div class="w-2 h-2 bg-gradient-to-r from-teal-500 to-emerald-500 rounded-full"></div>
+                                <span class="text-sm">Promotional Streamers</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 flex items-center text-tvp-accent font-semibold group-hover:translate-x-2 transition-transform duration-500">
+                            <span>View Gallery</span>
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Event Backdrops - Premium Card -->
+                <div class="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl hover:shadow-purple-500/20 transition-all duration-700 hover:-translate-y-3 hover:scale-105 overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-full blur-2xl transform translate-x-16 -translate-y-16 group-hover:scale-150 transition-transform duration-700"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                                <i class="fas fa-camera text-2xl text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">Event Backdrops</h3>
+                                <p class="text-slate-300 text-sm">Memorable photo settings</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 text-slate-200">
+                                <div class="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+                                <span class="text-sm">Wedding Backdrops</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-slate-200">
+                                <div class="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+                                <span class="text-sm">Birthday Backdrops</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-slate-200">
+                                <div class="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+                                <span class="text-sm">Photo Booth Backgrounds</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-slate-200">
+                                <div class="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+                                <span class="text-sm">Custom Event Backdrops</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 flex items-center text-tvp-accent font-semibold group-hover:translate-x-2 transition-transform duration-500">
+                            <span>See Examples</span>
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Signage & Displays - Premium Card -->
+                <div class="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl hover:shadow-blue-500/20 transition-all duration-700 hover:-translate-y-3 hover:scale-105 overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-full blur-2xl transform translate-x-16 -translate-y-16 group-hover:scale-150 transition-transform duration-700"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                                <i class="fas fa-sign text-2xl text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">Signage & Displays</h3>
+                                <p class="text-slate-300 text-sm">Professional signage solutions</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 text-slate-200">
+                                <div class="w-2 h-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full"></div>
+                                <span class="text-sm">Real Estate Signage</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-slate-200">
+                                <div class="w-2 h-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full"></div>
+                                <span class="text-sm">Construction Signage</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-slate-200">
+                                <div class="w-2 h-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full"></div>
+                                <span class="text-sm">Menu Boards</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-slate-200">
+                                <div class="w-2 h-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full"></div>
+                                <span class="text-sm">Directional Signage</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 flex items-center text-tvp-accent font-semibold group-hover:translate-x-2 transition-transform duration-500">
+                            <span>Get Quote</span>
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Marketing Materials - Premium Card -->
+                <div class="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl hover:shadow-yellow-500/20 transition-all duration-700 hover:-translate-y-3 hover:scale-105 overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-yellow-500/10 to-orange-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-yellow-500/20 to-orange-500/20 rounded-full blur-2xl transform translate-x-16 -translate-y-16 group-hover:scale-150 transition-transform duration-700"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                                <i class="fas fa-bullhorn text-2xl text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-white">Marketing Materials</h3>
+                                <p class="text-slate-300 text-sm">Promotional & advertising</p>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 text-slate-200">
+                                <div class="w-2 h-2 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full"></div>
+                                <span class="text-sm">Announcement Posters</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-slate-200">
+                                <div class="w-2 h-2 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full"></div>
+                                <span class="text-sm">Advertisement Materials</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-slate-200">
+                                <div class="w-2 h-2 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full"></div>
+                                <span class="text-sm">Election Materials</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-slate-200">
+                                <div class="w-2 h-2 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full"></div>
+                                <span class="text-sm">Promotional Items</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 flex items-center text-tvp-accent font-semibold group-hover:translate-x-2 transition-transform duration-500">
+                            <span>Start Campaign</span>
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Premium CTA Section -->
+            <div class="text-center">
+                <div class="relative inline-block">
+                    <div class="absolute inset-0 bg-gradient-to-r from-tvp-primary/20 to-tvp-secondary/20 rounded-2xl blur-xl"></div>
+                    <div class="relative bg-gradient-to-r from-tvp-primary to-tvp-secondary rounded-2xl p-1">
+                        <div class="bg-slate-900 rounded-xl px-8 py-4">
+                            <a href="#contact" class="flex items-center gap-4 text-white font-bold text-lg group">
+                                <span>Get Your Premium Quote Today</span>
+                                <div class="w-8 h-8 bg-gradient-to-r from-tvp-primary to-tvp-secondary rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                    <i class="fas fa-arrow-right text-sm"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="text-slate-400 text-sm mt-6">
+                    ✨ Premium quality guaranteed • ⚡ Fast turnaround • 🎯 100% satisfaction
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-32 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
+        <!-- Premium Background Effects -->
+        <div class="absolute inset-0">
+            <!-- Animated gradient orbs -->
+            <div class="absolute top-20 right-20 w-96 h-96 bg-gradient-to-r from-tvp-primary/10 to-tvp-secondary/10 rounded-full blur-3xl animate-pulse-slow"></div>
+            <div class="absolute bottom-20 left-20 w-80 h-80 bg-gradient-to-r from-tvp-accent/10 to-tvp-primary/10 rounded-full blur-3xl animate-pulse-slow animation-delay-2000"></div>
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-tvp-secondary/8 to-tvp-accent/8 rounded-full blur-3xl animate-pulse-slow animation-delay-4000"></div>
+            
+            <!-- Geometric patterns -->
+            <div class="absolute inset-0 opacity-5">
+                <div class="absolute top-32 right-32 w-2 h-2 bg-tvp-primary rotate-45 animate-pulse-slow"></div>
+                <div class="absolute top-64 left-48 w-3 h-3 bg-tvp-accent rotate-12 animate-bounce-slow"></div>
+                <div class="absolute bottom-48 right-64 w-4 h-4 bg-tvp-secondary rotate-45 animate-spin-slow"></div>
+                <div class="absolute bottom-32 left-32 w-2 h-2 bg-tvp-primary rotate-12 animate-pulse-slow"></div>
+            </div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <!-- Premium Section Header -->
+            <div class="text-center max-w-4xl mx-auto mb-20">
+                <div class="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-tvp-primary/10 to-tvp-secondary/10 backdrop-blur-sm border border-tvp-primary/20 mb-8">
+                    <div class="w-3 h-3 bg-gradient-to-r from-tvp-primary to-tvp-secondary rounded-full mr-3 animate-pulse"></div>
+                    <span class="text-sm font-semibold text-tvp-primary">ABOUT TAC VISUAL PRINTS</span>
+                </div>
+                
+                <h2 class="text-5xl md:text-6xl lg:text-7xl font-black text-slate-900 mb-8 leading-tight">
+                    <span class="bg-gradient-to-r from-slate-900 via-tvp-primary to-slate-700 bg-clip-text text-transparent">
+                        Your Trusted
+                    </span>
+                    <br>
+                    <span class="bg-gradient-to-r from-tvp-accent via-tvp-primary to-tvp-secondary bg-clip-text text-transparent">
+                        Printing Partner
+                    </span>
+                </h2>
+                
+                <p class="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto">
+                    We combine <span class="text-tvp-primary font-semibold">cutting-edge technology</span> with years of expertise to deliver exceptional printing solutions that bring your vision to life with unmatched quality and precision.
+                </p>
+            </div>
+            
+            <!-- Premium Stats Grid -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+                <div class="group relative bg-gradient-to-br from-white/80 to-white/60 backdrop-blur-xl rounded-3xl p-8 border border-white/40 shadow-2xl hover:shadow-tvp-primary/20 transition-all duration-700 hover:-translate-y-2 hover:scale-105 overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-tvp-primary/5 to-tvp-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                    <div class="relative z-10 text-center">
+                        <div class="w-16 h-16 bg-gradient-to-br from-tvp-primary to-tvp-secondary rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                            <i class="fas fa-users text-2xl text-white"></i>
+                        </div>
+                        <div class="text-4xl font-bold text-slate-900 mb-2 counter" data-target="500">0</div>
+                        <div class="text-sm font-semibold text-slate-600">Happy Clients</div>
+                    </div>
+                </div>
+                
+                <div class="group relative bg-gradient-to-br from-white/80 to-white/60 backdrop-blur-xl rounded-3xl p-8 border border-white/40 shadow-2xl hover:shadow-tvp-secondary/20 transition-all duration-700 hover:-translate-y-2 hover:scale-105 overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-tvp-secondary/5 to-tvp-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                    <div class="relative z-10 text-center">
+                        <div class="w-16 h-16 bg-gradient-to-br from-tvp-secondary to-tvp-accent rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                            <i class="fas fa-project-diagram text-2xl text-white"></i>
+                        </div>
+                        <div class="text-4xl font-bold text-slate-900 mb-2 counter" data-target="1000">0</div>
+                        <div class="text-sm font-semibold text-slate-600">Projects Completed</div>
+                    </div>
+                </div>
+                
+                <div class="group relative bg-gradient-to-br from-white/80 to-white/60 backdrop-blur-xl rounded-3xl p-8 border border-white/40 shadow-2xl hover:shadow-tvp-accent/20 transition-all duration-700 hover:-translate-y-2 hover:scale-105 overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-tvp-accent/5 to-tvp-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                    <div class="relative z-10 text-center">
+                        <div class="w-16 h-16 bg-gradient-to-br from-tvp-accent to-tvp-primary rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                            <i class="fas fa-calendar-alt text-2xl text-white"></i>
+                        </div>
+                        <div class="text-4xl font-bold text-slate-900 mb-2 counter" data-target="5">0</div>
+                        <div class="text-sm font-semibold text-slate-600">Years Experience</div>
+                    </div>
+                </div>
+                
+                <div class="group relative bg-gradient-to-br from-white/80 to-white/60 backdrop-blur-xl rounded-3xl p-8 border border-white/40 shadow-2xl hover:shadow-green-500/20 transition-all duration-700 hover:-translate-y-2 hover:scale-105 overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-green-500/5 to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                    <div class="relative z-10 text-center">
+                        <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                            <i class="fas fa-star text-2xl text-white"></i>
+                        </div>
+                        <div class="text-4xl font-bold text-slate-900 mb-2 counter" data-target="98">0</div>
+                        <div class="text-sm font-semibold text-slate-600">% Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Premium Content Grid -->
+            <div class="grid lg:grid-cols-2 gap-16 items-center mb-20">
+                <!-- About Content -->
+                <div class="space-y-8">
+                    <div class="space-y-6">
+                        <h3 class="text-3xl font-bold text-slate-900">Why Choose Tac Visual Prints?</h3>
+                        <p class="text-lg text-slate-600 leading-relaxed">
+                            We're not just another printing company. We're your creative partners, dedicated to transforming your ideas into stunning visual masterpieces that make a lasting impact.
+                        </p>
+                    </div>
+                    
+                    <!-- Key Features -->
+                    <div class="space-y-6">
+                        <div class="group flex items-start gap-4 p-4 rounded-2xl hover:bg-white/50 transition-all duration-300">
+                            <div class="w-14 h-14 bg-gradient-to-br from-tvp-primary to-tvp-secondary rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                                <i class="fas fa-award text-xl text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-slate-900 mb-2">Premium Quality</h4>
+                                <p class="text-slate-600">State-of-the-art equipment and premium materials for superior results that exceed expectations.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="group flex items-start gap-4 p-4 rounded-2xl hover:bg-white/50 transition-all duration-300">
+                            <div class="w-14 h-14 bg-gradient-to-br from-tvp-secondary to-tvp-accent rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                                <i class="fas fa-clock text-xl text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-slate-900 mb-2">Fast Turnaround</h4>
+                                <p class="text-slate-600">Quick delivery without compromising on quality. We understand the importance of meeting deadlines.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="group flex items-start gap-4 p-4 rounded-2xl hover:bg-white/50 transition-all duration-300">
+                            <div class="w-14 h-14 bg-gradient-to-br from-tvp-accent to-tvp-primary rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500 shadow-lg">
+                                <i class="fas fa-users text-xl text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-slate-900 mb-2">Expert Team</h4>
+                                <p class="text-slate-600">Skilled professionals with years of experience, dedicated to bringing your vision to life.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Premium Image/Visual -->
+                <div class="relative">
+                    <div class="relative z-10">
+                        <!-- Main Image Container -->
+                        <div class="relative rounded-3xl overflow-hidden shadow-2xl group">
+                            <img src="https://images.unsplash.com/photo-1643216671649-3fb0ce4026e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Professional printing equipment and workspace at Tac Visual Prints" 
+                                 class="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+                            <div class="absolute bottom-6 left-6 right-6">
+                                <h4 class="text-white text-xl font-bold mb-2">Professional Printing Studio</h4>
+                                <p class="text-white/90 text-sm">State-of-the-art equipment for premium results</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating Cards -->
+                        <div class="absolute -top-6 -left-6 bg-white/90 backdrop-blur-xl rounded-2xl p-6 shadow-2xl border border-white/40 group hover:scale-105 transition-transform duration-300">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-check text-white"></i>
+                                </div>
+                                <div>
+                                    <div class="font-bold text-slate-900">Quality Guaranteed</div>
+                                    <div class="text-sm text-slate-600">100% satisfaction or reprint</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="absolute -bottom-6 -right-6 bg-white/90 backdrop-blur-xl rounded-2xl p-6 shadow-2xl border border-white/40 group hover:scale-105 transition-transform duration-300">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-shipping-fast text-white"></i>
+                                </div>
+                                <div>
+                                    <div class="font-bold text-slate-900">Fast Delivery</div>
+                                    <div class="text-sm text-slate-600">Same day pickup available</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Background Decoration -->
+                    <div class="absolute top-10 -left-10 w-20 h-20 bg-tvp-primary/20 rounded-full blur-xl"></div>
+                    <div class="absolute bottom-10 -right-10 w-32 h-32 bg-tvp-secondary/20 rounded-full blur-xl"></div>
+                </div>
+            </div>
+            
+            <!-- Premium Mission Statement -->
+            <div class="text-center max-w-5xl mx-auto">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-r from-tvp-primary/10 to-tvp-secondary/10 rounded-3xl blur-2xl"></div>
+                    <div class="relative bg-gradient-to-br from-white/80 to-white/60 backdrop-blur-xl rounded-3xl p-16 border border-white/40 shadow-2xl">
+                        <div class="w-20 h-20 bg-gradient-to-br from-tvp-primary to-tvp-secondary rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-lg">
+                            <i class="fas fa-bullseye text-3xl text-white"></i>
+                        </div>
+                        <h3 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Our Mission</h3>
+                        <p class="text-xl text-slate-600 leading-relaxed mb-10 max-w-4xl mx-auto">
+                            To empower businesses and individuals with high-quality, innovative printing solutions that make a lasting impression. We believe every project deserves exceptional attention to detail and professional craftsmanship that exceeds expectations.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                            <a href="#services" class="group relative bg-gradient-to-r from-tvp-primary to-tvp-secondary rounded-2xl p-1">
+                                <div class="bg-white rounded-xl px-8 py-4 group-hover:bg-transparent transition-colors duration-300">
+                                    <span class="text-slate-900 group-hover:text-white font-bold text-lg transition-colors duration-300">Explore Our Services</span>
+                                </div>
+                            </a>
+                            <a href="#contact" class="group relative bg-gradient-to-r from-slate-900 to-slate-700 rounded-2xl p-1">
+                                <div class="bg-white rounded-xl px-8 py-4 group-hover:bg-transparent transition-colors duration-300">
+                                    <span class="text-slate-900 group-hover:text-white font-bold text-lg transition-colors duration-300">Get In Touch</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-20 w-96 h-96 bg-tvp-primary rounded-full blur-3xl animate-pulse-slow"></div>
+            <div class="absolute bottom-20 right-20 w-80 h-80 bg-tvp-secondary rounded-full blur-3xl animate-pulse-slow animation-delay-2000"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-flex items-center px-4 py-2 rounded-full bg-tvp-primary/20 border border-tvp-primary/30 mb-6">
+                    <span class="w-2 h-2 bg-tvp-primary rounded-full mr-2 animate-pulse"></span>
+                    <span class="text-sm font-medium text-tvp-primary">Contact Us</span>
+                </div>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6">
+                    <span class="bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent">
+                        Get In Touch
+                    </span>
+                </h2>
+                <p class="text-lg text-slate-400 leading-relaxed">
+                    Ready to bring your vision to life? Contact us today for a free quote and let's discuss how we can help with your printing needs.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-16 items-start">
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <div class="group">
+                        <h3 class="text-2xl font-bold text-white mb-6">Let's Start Your Project</h3>
+                        <p class="text-slate-400 leading-relaxed mb-8">
+                            We're here to help you create stunning visual solutions. Whether you need custom printing, large format graphics, or specialized materials, our team has the expertise to bring your ideas to life.
+                        </p>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300">
+                            <div class="w-12 h-12 bg-gradient-to-br from-tvp-primary to-tvp-secondary rounded-xl flex items-center justify-center">
+                                <i class="fas fa-phone text-white"></i>
+                            </div>
+                            <div>
+                                <div class="text-white font-semibold">Phone</div>
+                                <div class="text-slate-400">+63 (995) 398-9984</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300">
+                            <div class="w-12 h-12 bg-gradient-to-br from-tvp-secondary to-tvp-accent rounded-xl flex items-center justify-center">
+                                <i class="fas fa-envelope text-white"></i>
+                            </div>
+                            <div>
+                                <div class="text-white font-semibold">Email</div>
+                                <div class="text-slate-400">info@tacvisualprints.com</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-br from-tvp-primary/20 to-tvp-secondary/20 rounded-3xl blur-xl"></div>
+                    <form id="contactForm" class="relative bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
+                        <div class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-white font-semibold mb-2">Your Name</label>
+                                    <input class="w-full rounded-xl px-4 py-3 bg-white/90 text-slate-900 focus:outline-none focus:ring-4 focus:ring-tvp-primary/20 focus:bg-white transition-all duration-300" type="text" name="name" placeholder="Enter your name" required>
+                                </div>
+                                <div>
+                                    <label class="block text-white font-semibold mb-2">Your Email</label>
+                                    <input class="w-full rounded-xl px-4 py-3 bg-white/90 text-slate-900 focus:outline-none focus:ring-4 focus:ring-tvp-primary/20 focus:bg-white transition-all duration-300" type="email" name="email" placeholder="Enter your email" required>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-white font-semibold mb-2">Phone Number</label>
+                                <input class="w-full rounded-xl px-4 py-3 bg-white/90 text-slate-900 focus:outline-none focus:ring-4 focus:ring-tvp-primary/20 focus:bg-white transition-all duration-300" type="tel" name="phone" placeholder="Enter your phone number">
+                            </div>
+                            
+                            <div>
+                                <label class="block text-white font-semibold mb-2">Project Details</label>
+                                <textarea class="w-full rounded-xl px-4 py-3 bg-white/90 text-slate-900 focus:outline-none focus:ring-4 focus:ring-tvp-primary/20 focus:bg-white transition-all duration-300" name="message" rows="5" placeholder="Tell us about your project requirements, quantities, timeline, and any specific details..." required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary w-full">
+                                <span class="flex items-center justify-center">
+                                    <i class="fas fa-paper-plane mr-2"></i>
+                                    Send Message
+                                </span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-16 relative overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-10 left-10 w-64 h-64 bg-tvp-primary rounded-full blur-3xl animate-pulse-slow"></div>
+            <div class="absolute bottom-10 right-10 w-80 h-80 bg-tvp-secondary rounded-full blur-3xl animate-pulse-slow animation-delay-2000"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <!-- Company Info -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="assets/images/footer-logo.svg" alt="Tac Visual Prints Logo" class="logo h-24 w-auto">
+                    </div>
+                    <p class="text-slate-400 leading-relaxed mb-6">
+                        Professional printing solutions for all your visual needs. From sublimation to signage, we deliver exceptional quality with cutting-edge technology and expert craftsmanship.
+                    </p>
+                    <div class="social-media-icons">
+                        <a href="https://facebook.com/tacvisualprints" target="_blank" rel="noopener noreferrer" class="social-icon social-icon--facebook" aria-label="Follow us on Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="https://instagram.com/tacvisualprints" target="_blank" rel="noopener noreferrer" class="social-icon social-icon--instagram" aria-label="Follow us on Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com/tacvisualprints" target="_blank" rel="noopener noreferrer" class="social-icon social-icon--twitter" aria-label="Follow us on Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        <a href="https://youtube.com/tacvisualprints" target="_blank" rel="noopener noreferrer" class="social-icon social-icon--youtube" aria-label="Subscribe to our YouTube channel">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-slate-400 hover:text-white transition-colors duration-300">Home</a></li>
+                        <li><a href="#services" class="text-slate-400 hover:text-white transition-colors duration-300">Services</a></li>
+                        <li><a href="#portfolio" class="text-slate-400 hover:text-white transition-colors duration-300">Portfolio</a></li>
+                        <li><a href="#about" class="text-slate-400 hover:text-white transition-colors duration-300">About</a></li>
+                        <li><a href="#contact" class="text-slate-400 hover:text-white transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Our Services</h4>
+                    <ul class="space-y-2">
+                        <li><span class="text-slate-400">Full Sublimation</span></li>
+                        <li><span class="text-slate-400">Tarpaulin Printing</span></li>
+                        <li><span class="text-slate-400">Event Backdrops</span></li>
+                        <li><span class="text-slate-400">Custom T-Shirts</span></li>
+                        <li><span class="text-slate-400">Sports Uniforms</span></li>
+                        <li><span class="text-slate-400">Signage & Displays</span></li>
+                        <li><span class="text-slate-400">DTF Printing</span></li>
+                        <li><span class="text-slate-400">Marketing Materials</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Bottom Bar -->
+            <div class="border-t border-white/10 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-slate-400 text-sm mb-4 md:mb-0">
+                        &copy; 2025 Tac Visual Prints. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6 text-sm">
+                        <a href="#" class="text-slate-400 hover:text-white transition-colors duration-300">Privacy Policy</a>
+                        <a href="#" class="text-slate-400 hover:text-white transition-colors duration-300">Terms of Service</a>
+                        <a href="#" class="text-slate-400 hover:text-white transition-colors duration-300">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Chatbot (TVP Assistant) -->
+    <div class="tvp-chatbot" id="tvpChatbot" aria-live="polite">
+        <button class="chat-toggle" id="chatToggle" aria-label="Open chat">
+            <i class="fas fa-comments"></i>
+        </button>
+
+        <div class="chat-window" id="chatWindow" role="dialog" aria-modal="false" aria-labelledby="chatTitle">
+            <div class="chat-header">
+                <div class="chat-brand">
+                    <span class="chat-logo">TVP</span>
+                    <div>
+                        <h4 id="chatTitle">Tac Visual Prints Assistant</h4>
+                        <small>Typically replies within minutes</small>
+                    </div>
+                </div>
+                <div class="chat-actions">
+                    <button class="chat-action" id="chatMinimize" title="Minimize"><i class="fas fa-minus"></i></button>
+                    <button class="chat-action" id="chatClose" title="Close"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+
+            <div class="chat-body" id="chatBody">
+                <div class="message bot">
+                    <div class="bubble">
+                        Hello! Welcome to Tac Visual Prints! 👋<br><br>
+                        I'm your personal printing assistant. I can help you with:
+                        <br>• <strong>Instant quotes</strong> - Get pricing quickly
+                        <br>• <strong>Service explanations</strong> - Learn about our offerings
+                        <br>• <strong>Technical questions</strong> - DTF, sublimation, materials
+                        <br>• <strong>Order planning</strong> - Timeline and requirements
+                        <br>• <strong>Design support</strong> - File formats and artwork help
+                        <br><br><strong>How can I assist you today?</strong>
+                        <div class="suggested">
+                            <button class="suggestion">Get a quote</button>
+                            <button class="suggestion">Our services</button>
+                            <button class="suggestion">Turnaround time</button>
+                            <button class="suggestion">DTF printing</button>
+                            <button class="suggestion">Contact info</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-footer">
+                <form id="chatForm" autocomplete="off">
+                    <input type="text" id="chatInput" placeholder="Type your message..." aria-label="Message input" />
+                    <button type="submit" class="send-btn" aria-label="Send"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- AOS Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    
+    <!-- Initialize AOS -->
+    <script>
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+    </script>
+
+    <!-- Modular JavaScript -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
