@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Tac Visual Prints | Our Best Work</title>
+    <meta name="description" content="Explore our portfolio of professional printing work including sublimation, tarpaulins, backdrops, signage, and custom apparel.">
+    <meta name="keywords" content="printing portfolio, sublimation work, tarpaulin printing, event backdrops, custom apparel, signage design">
+    
+    <!-- External Resources -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { 
+              sans: ["Inter", "ui-sans-serif", "system-ui"],
+              serif: ["Playfair Display", "ui-serif", "Georgia"]
+            },
+            colors: {
+              tvp: {
+                primary: '#6366f1',
+                secondary: '#8b5cf6',
+                accent: '#f59e0b',
+                dark: '#0f172a',
+                light: '#f8fafc'
+              }
+            },
+            animation: {
+              'float': 'float 6s ease-in-out infinite',
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'bounce-slow': 'bounce 3s infinite',
+              'spin-slow': 'spin 8s linear infinite',
+              'gradient': 'gradient 15s ease infinite',
+              'shimmer': 'shimmer 2s linear infinite',
+              'glow': 'glow 2s ease-in-out infinite alternate'
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0px)' },
+                '50%': { transform: 'translateY(-20px)' }
+              },
+              gradient: {
+                '0%, 100%': { backgroundPosition: '0% 50%' },
+                '50%': { backgroundPosition: '100% 50%' }
+              },
+              shimmer: {
+                '0%': { transform: 'translateX(-100%)' },
+                '100%': { transform: 'translateX(100%)' }
+              },
+              glow: {
+                '0%': { boxShadow: '0 0 20px rgba(99, 102, 241, 0.5)' },
+                '100%': { boxShadow: '0 0 40px rgba(99, 102, 241, 0.8)' }
+              }
+            },
+            backgroundImage: {
+              'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+              'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+            }
+          }
+        }
+      }
+    </script>
+    
+    <!-- Modular CSS -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/components/buttons.css">
+    <link rel="stylesheet" href="css/components/chatbot.css">
+    <link rel="stylesheet" href="css/components/social-media.css">
+    
+    <!-- Portfolio Specific Styles -->
+    <style>
+        .portfolio-filter {
+            transition: all 0.3s ease;
+        }
+        
+        .portfolio-filter.active {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
+        }
+        
+        .portfolio-item {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .portfolio-item.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-10px) scale(1.02);
+        }
+        
+        .portfolio-overlay {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.9), rgba(139, 92, 246, 0.9));
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .lightbox.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .lightbox-content {
+            max-width: 90vw;
+            max-height: 90vh;
+            position: relative;
+        }
+        
+        .lightbox img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+        }
+        
+        .lightbox-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            background: white;
+            color: black;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-800 antialiased">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur supports-backdrop-blur:border-b border-white/20 transition-shadow">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+            <a href="index.html" class="text-slate-900 font-extrabold text-xl tracking-tight">Tac Visual Prints</a>
+            <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-700">
+                <li><a class="hover:text-tvp-primary" href="index.html">Home</a></li>
+                <li><a class="hover:text-tvp-primary" href="index.html#services">Services</a></li>
+                <li><a class="hover:text-tvp-primary text-tvp-primary font-semibold" href="portfolio.html">Portfolio</a></li>
+                <li><a class="hover:text-tvp-primary" href="index.html#about">About</a></li>
+                <li><a class="hover:text-tvp-primary" href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center text-center text-white overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+        <!-- Background Elements -->
+        <div class="absolute inset-0">
+            <div class="absolute top-20 left-20 w-96 h-96 bg-gradient-to-r from-tvp-primary/20 to-tvp-secondary/20 rounded-full blur-3xl animate-pulse-slow"></div>
+            <div class="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-r from-tvp-accent/20 to-tvp-primary/20 rounded-full blur-3xl animate-pulse-slow animation-delay-2000"></div>
+        </div>
+        
+        <div class="max-w-5xl mx-auto px-6 relative z-10">
+            <!-- Badge -->
+            <div class="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-8 animate-fade-in">
+                <span class="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+                <span class="text-sm font-medium">Our Best Work</span>
+            </div>
+            
+            <!-- Main Heading -->
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight mb-6">
+                <span class="bg-gradient-to-r from-white via-blue-100 to-purple-200 bg-clip-text text-transparent animate-shimmer">
+                    Portfolio
+                </span>
+                <br>
+                <span class="bg-gradient-to-r from-tvp-accent via-tvp-primary to-tvp-secondary bg-clip-text text-transparent">
+                    Showcase
+                </span>
+            </h1>
+            
+            <!-- Subtitle -->
+            <p class="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
+                Discover our <span class="text-tvp-accent font-semibold">stunning collection</span> of professional printing projects that showcase our expertise and attention to detail.
+            </p>
+        </div>
+    </section>
+
+    <!-- Portfolio Filter -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Our Work</h2>
+                <p class="text-lg text-slate-600">Filter by category to explore our diverse portfolio</p>
+            </div>
+            
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="portfolio-filter active px-6 py-3 rounded-full bg-slate-100 text-slate-700 font-semibold" data-filter="all">
+                    All Work
+                </button>
+                <button class="portfolio-filter px-6 py-3 rounded-full bg-slate-100 text-slate-700 font-semibold" data-filter="apparel">
+                    Clothing & Apparel
+                </button>
+                <button class="portfolio-filter px-6 py-3 rounded-full bg-slate-100 text-slate-700 font-semibold" data-filter="tarpaulins">
+                    Tarpaulins & Banners
+                </button>
+                <button class="portfolio-filter px-6 py-3 rounded-full bg-slate-100 text-slate-700 font-semibold" data-filter="backdrops">
+                    Event Backdrops
+                </button>
+                <button class="portfolio-filter px-6 py-3 rounded-full bg-slate-100 text-slate-700 font-semibold" data-filter="signage">
+                    Signage & Displays
+                </button>
+                <button class="portfolio-filter px-6 py-3 rounded-full bg-slate-100 text-slate-700 font-semibold" data-filter="marketing">
+                    Marketing Materials
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Gallery -->
+    <section class="py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
+                <!-- Apparel Items -->
+                <div class="portfolio-item" data-category="apparel">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl group cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Custom T-Shirt Design" class="w-full h-80 object-cover">
+                        <div class="portfolio-overlay absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <i class="fas fa-expand text-4xl mb-4"></i>
+                                <h3 class="text-xl font-bold mb-2">Custom T-Shirt</h3>
+                                <p class="text-sm opacity-90">Full Sublimation Print</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="apparel">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl group cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Sports Team Uniform" class="w-full h-80 object-cover">
+                        <div class="portfolio-overlay absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <i class="fas fa-expand text-4xl mb-4"></i>
+                                <h3 class="text-xl font-bold mb-2">Basketball Uniform</h3>
+                                <p class="text-sm opacity-90">Team Sports Apparel</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="apparel">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl group cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Polo Shirt Design" class="w-full h-80 object-cover">
+                        <div class="portfolio-overlay absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <i class="fas fa-expand text-4xl mb-4"></i>
+                                <h3 class="text-xl font-bold mb-2">Polo Shirt</h3>
+                                <p class="text-sm opacity-90">Corporate Apparel</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarpaulins Items -->
+                <div class="portfolio-item" data-category="tarpaulins">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl group cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Event Tarpaulin" class="w-full h-80 object-cover">
+                        <div class="portfolio-overlay absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <i class="fas fa-expand text-4xl mb-4"></i>
+                                <h3 class="text-xl font-bold mb-2">Event Tarpaulin</h3>
+                                <p class="text-sm opacity-90">Large Format Printing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="tarpaulins">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl group cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Roll-up Banner" class="w-full h-80 object-cover">
+                        <div class="portfolio-overlay absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <i class="fas fa-expand text-4xl mb-4"></i>
+                                <h3 class="text-xl font-bold mb-2">Roll-up Banner</h3>
+                                <p class="text-sm opacity-90">Promotional Display</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="tarpaulins">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl group cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Storefront Banner" class="w-full h-80 object-cover">
+                        <div class="portfolio-overlay absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <i class="fas fa-expand text-4xl mb-4"></i>
+                                <h3 class="text-xl font-bold mb-2">Storefront Banner</h3>
+                                <p class="text-sm opacity-90">Business Promotion</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backdrops Items -->
+                <div class="portfolio-item" data-category="backdrops">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl group cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1519167758481-83f1426e4b3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Wedding Backdrop" class="w-full h-80 object-cover">
+                        <div class="portfolio-overlay absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <i class="fas fa-expand text-4xl mb-4"></i>
+                                <h3 class="text-xl font-bold mb-2">Wedding Backdrop</h3>
+                                <p class="text-sm opacity-90">Event Photography</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="backdrops">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl group cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Birthday Backdrop" class="w-full h-80 object-cover">
+                        <div class="portfolio-overlay absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <i class="fas fa-expand text-4xl mb-4"></i>
+                                <h3 class="text-xl font-bold mb-2">Birthday Backdrop</h3>
+                                <p class="text-sm opacity-90">Party Decoration</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="backdrops">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl group cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1519167758481-83f1426e4b3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Photo Booth Background" class="w-full h-80 object-cover">
+                        <div class="portfolio-overlay absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <i class="fas fa-expand text-4xl mb-4"></i>
+                                <h3 class="text-xl font-bold mb-2">Photo Booth</h3>
+                                <p class="text-sm opacity-90">Event Background</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Signage Items -->
+                <div class="portfolio-item" data-category="signage">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl group cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Real Estate Signage" class="w-full h-80 object-cover">
+                        <div class="portfolio-overlay absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <i class="fas fa-expand text-4xl mb-4"></i>
+                                <h3 class="text-xl font-bold mb-2">Real Estate Sign</h3>
+                                <p class="text-sm opacity-90">Property Marketing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="signage">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl group cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Menu Board" class="w-full h-80 object-cover">
+                        <div class="portfolio-overlay absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <i class="fas fa-expand text-4xl mb-4"></i>
+                                <h3 class="text-xl font-bold mb-2">Menu Board</h3>
+                                <p class="text-sm opacity-90">Restaurant Display</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="signage">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl group cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Construction Signage" class="w-full h-80 object-cover">
+                        <div class="portfolio-overlay absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <i class="fas fa-expand text-4xl mb-4"></i>
+                                <h3 class="text-xl font-bold mb-2">Construction Sign</h3>
+                                <p class="text-sm opacity-90">Site Safety Display</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Marketing Items -->
+                <div class="portfolio-item" data-category="marketing">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl group cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Announcement Poster" class="w-full h-80 object-cover">
+                        <div class="portfolio-overlay absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <i class="fas fa-expand text-4xl mb-4"></i>
+                                <h3 class="text-xl font-bold mb-2">Announcement Poster</h3>
+                                <p class="text-sm opacity-90">Event Promotion</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="marketing">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl group cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Advertisement Material" class="w-full h-80 object-cover">
+                        <div class="portfolio-overlay absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <i class="fas fa-expand text-4xl mb-4"></i>
+                                <h3 class="text-xl font-bold mb-2">Advertisement</h3>
+                                <p class="text-sm opacity-90">Marketing Campaign</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="marketing">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl group cursor-pointer">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Election Material" class="w-full h-80 object-cover">
+                        <div class="portfolio-overlay absolute inset-0 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <i class="fas fa-expand text-4xl mb-4"></i>
+                                <h3 class="text-xl font-bold mb-2">Election Material</h3>
+                                <p class="text-sm opacity-90">Political Campaign</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white relative overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-20 w-96 h-96 bg-tvp-primary rounded-full blur-3xl animate-pulse-slow"></div>
+            <div class="absolute bottom-20 right-20 w-80 h-80 bg-tvp-secondary rounded-full blur-3xl animate-pulse-slow animation-delay-2000"></div>
+        </div>
+        
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                Ready to Create Something Amazing?
+            </h2>
+            <p class="text-xl text-slate-300 mb-10">
+                Let's bring your vision to life with our professional printing services. Get a quote today and join our portfolio of satisfied clients.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="index.html#contact" class="btn btn-primary btn-lg">
+                    <span>Get Your Quote</span>
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+                <a href="index.html#services" class="btn btn-outline btn-lg">
+                    <span>View Our Services</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-16 relative overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-10 left-10 w-64 h-64 bg-tvp-primary rounded-full blur-3xl animate-pulse-slow"></div>
+            <div class="absolute bottom-10 right-10 w-80 h-80 bg-tvp-secondary rounded-full blur-3xl animate-pulse-slow animation-delay-2000"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <!-- Company Info -->
+                <div class="md:col-span-2">
+                    <h3 class="text-2xl font-bold text-white mb-4">Tac Visual Prints</h3>
+                    <p class="text-slate-400 leading-relaxed mb-6">
+                        Professional printing solutions for all your visual needs. From sublimation to signage, we deliver exceptional quality with cutting-edge technology and expert craftsmanship.
+                    </p>
+                    <div class="social-media-icons">
+                        <a href="https://facebook.com/tacvisualprints" target="_blank" rel="noopener noreferrer" class="social-icon social-icon--facebook" aria-label="Follow us on Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="https://instagram.com/tacvisualprints" target="_blank" rel="noopener noreferrer" class="social-icon social-icon--instagram" aria-label="Follow us on Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com/tacvisualprints" target="_blank" rel="noopener noreferrer" class="social-icon social-icon--twitter" aria-label="Follow us on Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        <a href="https://youtube.com/tacvisualprints" target="_blank" rel="noopener noreferrer" class="social-icon social-icon--youtube" aria-label="Subscribe to our YouTube channel">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-slate-400 hover:text-white transition-colors duration-300">Home</a></li>
+                        <li><a href="index.html#services" class="text-slate-400 hover:text-white transition-colors duration-300">Services</a></li>
+                        <li><a href="portfolio.html" class="text-slate-400 hover:text-white transition-colors duration-300">Portfolio</a></li>
+                        <li><a href="index.html#about" class="text-slate-400 hover:text-white transition-colors duration-300">About</a></li>
+                        <li><a href="index.html#contact" class="text-slate-400 hover:text-white transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Our Services</h4>
+                    <ul class="space-y-2">
+                        <li><span class="text-slate-400">Full Sublimation</span></li>
+                        <li><span class="text-slate-400">Tarpaulin Printing</span></li>
+                        <li><span class="text-slate-400">Event Backdrops</span></li>
+                        <li><span class="text-slate-400">Custom T-Shirts</span></li>
+                        <li><span class="text-slate-400">Sports Uniforms</span></li>
+                        <li><span class="text-slate-400">Signage & Displays</span></li>
+                        <li><span class="text-slate-400">DTF Printing</span></li>
+                        <li><span class="text-slate-400">Marketing Materials</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Bottom Bar -->
+            <div class="border-t border-white/10 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-slate-400 text-sm mb-4 md:mb-0">
+                        &copy; 2024 Tac Visual Prints. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6 text-sm">
+                        <a href="#" class="text-slate-400 hover:text-white transition-colors duration-300">Privacy Policy</a>
+                        <a href="#" class="text-slate-400 hover:text-white transition-colors duration-300">Terms of Service</a>
+                        <a href="#" class="text-slate-400 hover:text-white transition-colors duration-300">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightbox-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <img id="lightbox-image" src="" alt="">
+        </div>
+    </div>
+
+    <!-- AOS Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <!-- Initialize AOS -->
+    <script>
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+    </script>
+
+    <!-- Portfolio JavaScript -->
+    <script>
+        // Portfolio Filter Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.portfolio-filter');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+            
+            // Show all items initially
+            portfolioItems.forEach(item => {
+                item.classList.add('show');
+            });
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filter items
+                    portfolioItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.classList.add('show');
+                        } else {
+                            item.classList.remove('show');
+                        }
+                    });
+                });
+            });
+            
+            // Lightbox functionality
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxClose = document.getElementById('lightbox-close');
+            const portfolioGrid = document.getElementById('portfolio-grid');
+            
+            portfolioGrid.addEventListener('click', function(e) {
+                const img = e.target.closest('.portfolio-item img');
+                if (img) {
+                    lightboxImage.src = img.src;
+                    lightboxImage.alt = img.alt;
+                    lightbox.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+            
+            lightboxClose.addEventListener('click', function() {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+            
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) {
+                    lightbox.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Close lightbox with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                    lightbox.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
