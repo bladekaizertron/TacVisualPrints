@@ -227,9 +227,17 @@ class TVPApplication {
         const contactForm = getElementById('contactForm');
         if (!contactForm) return;
         
+        // Note: Form now submits directly to FormSubmit - no preventDefault
+        // FormSubmit will handle the submission and redirect
+        
+        // Just add validation before submission
         contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            this.handleFormSubmission(contactForm);
+            const formData = new FormData(contactForm);
+            const formObject = Object.fromEntries(formData);
+            
+            if (!this.validateForm(formObject)) {
+                e.preventDefault();
+            }
         });
     }
 
@@ -261,16 +269,30 @@ class TVPApplication {
         );
         
         if (missingFields.length > 0) {
-            this.showErrorMessage('Please fill in all required fields.');
+            this.showFormMessage('Please fill in all required fields.', 'error');
             return false;
         }
         
         if (!isValidEmail(data.email)) {
-            this.showErrorMessage('Please enter a valid email address.');
+            this.showFormMessage('Please enter a valid email address.', 'error');
             return false;
         }
         
         return true;
+    }
+
+    showFormMessage(message, type) {
+        const messageDiv = document.getElementById('formMessage');
+        if (!messageDiv) return;
+        
+        messageDiv.textContent = message;
+        messageDiv.className = `mb-6 p-4 rounded-xl ${type === 'error' ? 'bg-red-500/90 text-white' : 'bg-green-500/90 text-white'}`;
+        messageDiv.classList.remove('hidden');
+        
+        // Hide after 5 seconds
+        setTimeout(() => {
+            messageDiv.classList.add('hidden');
+        }, 5000);
     }
 
     async simulateFormSubmission() {
@@ -296,11 +318,11 @@ class TVPApplication {
     }
 
     showErrorMessage(message) {
-        alert(message);
+        this.showFormMessage(message, 'error');
     }
 
     showSuccessMessage() {
-        alert('Thank you for your message! We will get back to you soon.');
+        this.showFormMessage('Thank you for your message! We will get back to you soon.', 'success');
     }
 
     // ===== INTERACTIVE EFFECTS =====
