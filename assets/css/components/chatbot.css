@@ -449,3 +449,22 @@
     background: #4b5563;
   }
 }
+
+/* Hide Facebook Messenger Widget/Plugin */
+iframe[src*="facebook.com/plugins"],
+iframe[src*="messenger.com"],
+.fb_dialog,
+.fb-customerchat,
+#fb-root iframe,
+div[id*="facebook"],
+div[class*="fb_"],
+iframe[name*="facebook"],
+iframe[title*="Facebook"],
+iframe[title*="Messenger"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  pointer-events: none !important;
+}
