@@ -180,6 +180,22 @@
             flex-wrap: wrap;
         }
         
+        /* Hide ALL Facebook Messenger widgets and plugins */
+        #fb-root,
+        .fb_dialog,
+        .fb_reset,
+        .fb-customerchat,
+        iframe[src*="facebook.com"],
+        iframe[src*="messenger.com"],
+        div[id*="facebook"],
+        div[class*="fb_"],
+        div[data-testid*="CustomerChat"] {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
+        }
+        
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .social-media-icons {

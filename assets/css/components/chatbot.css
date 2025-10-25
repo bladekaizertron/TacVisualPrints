@@ -468,3 +468,19 @@ iframe[title*="Messenger"] {
   height: 0 !important;
   pointer-events: none !important;
 }
+
+/* Specifically hide the Messenger bubble icon */
+#fb-root,
+.fb_reset,
+.fb_customer_chat_bounce_in_v2,
+.fb_customer_chat_bounce_out_v2,
+div[data-testid*="CustomerChat"],
+div[aria-label*="Messenger"],
+/* Target the purple circular messenger icon */
+div[style*="position: fixed"][style*="bottom"][style*="right"] > div[role="button"],
+div[style*="position: fixed"][style*="z-index"] > div[style*="background"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
