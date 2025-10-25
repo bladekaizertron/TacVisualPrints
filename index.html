@@ -75,9 +75,6 @@
     <link rel="stylesheet" href="assets/css/animations.css">
     <link rel="stylesheet" href="assets/css/components/buttons.css">
     <link rel="stylesheet" href="assets/css/components/chatbot.css">
-    
-    <!-- Google reCAPTCHA v3 -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <link rel="stylesheet" href="assets/css/components/social-media.css">
     
     <!-- Inline CSS for immediate icon display -->
@@ -896,10 +893,10 @@
                     <div class="absolute inset-0 bg-gradient-to-br from-tvp-primary/20 to-tvp-secondary/20 rounded-3xl blur-xl"></div>
                     <form id="contactForm" action="https://formsubmit.co/web.tacvisualprints@gmail.com" method="POST" class="relative bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
                         <!-- FormSubmit Configuration -->
-                        <input type="hidden" name="_captcha" value="true">
+                        <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="_subject" value="New Contact Form Submission - TVP Printing Shop">
                         <input type="hidden" name="_template" value="table">
-                        <input type="hidden" name="_next" value="https://tacvisualprints.vercel.app/#contact">
+                        <input type="hidden" name="_next" value="https://tac-visual-prints.vercel.app/#contact">
                         <input type="hidden" name="_autoresponse" value="Thank you for contacting TVP Printing Shop! We received your message and will get back to you within 24 hours.">
                         
                         <!-- Success/Error Message -->
@@ -925,13 +922,6 @@
                             <div>
                                 <label class="block text-white font-semibold mb-2">Project Details</label>
                                 <textarea class="w-full rounded-xl px-4 py-3 bg-white/90 text-slate-900 focus:outline-none focus:ring-4 focus:ring-tvp-primary/20 focus:bg-white transition-all duration-300" name="message" rows="5" placeholder="Tell us about your project requirements, quantities, timeline, and any specific details..." required></textarea>
-                            </div>
-                            
-                            <!-- Google reCAPTCHA v3 Badge Notice -->
-                            <div class="text-xs text-white/70">
-                                This site is protected by reCAPTCHA and the Google
-                                <a href="https://policies.google.com/privacy" target="_blank" class="underline hover:text-white">Privacy Policy</a> and
-                                <a href="https://policies.google.com/terms" target="_blank" class="underline hover:text-white">Terms of Service</a> apply.
                             </div>
                             
                             <button type="submit" class="btn btn-primary w-full">
