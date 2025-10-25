@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "php -S localhost:8000",
-    "build": "echo 'Build process would go here'",
+    "build": "echo 'Static site - no build required'",
+    "deploy": "npx wrangler deploy",
     "test": "echo 'Tests would go here'",
     "lint": "echo 'Linting would go here'"
   },
