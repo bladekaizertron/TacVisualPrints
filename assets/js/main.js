@@ -26,6 +26,7 @@ class TVPApplication {
             
             // Initialize core components
             this.initializeNavbar();
+            this.initializeMobileMenu();
             this.initializeSmoothScrolling();
             this.initializeFormHandling();
             this.initializeInteractiveEffects();
@@ -34,9 +35,26 @@ class TVPApplication {
             this.initializeAccessibility();
             
             // Initialize modules
-            this.chatbot = new TVPChatbot();
-            this.animationController = new AnimationController();
-            this.socialMediaEnhancer = new SocialMediaEnhancer();
+            try {
+                this.chatbot = new TVPChatbot();
+                console.log('Chatbot initialized successfully');
+            } catch (error) {
+                console.error('Failed to initialize chatbot:', error);
+            }
+            
+            try {
+                this.animationController = new AnimationController();
+                console.log('Animation controller initialized successfully');
+            } catch (error) {
+                console.error('Failed to initialize animation controller:', error);
+            }
+            
+            try {
+                this.socialMediaEnhancer = new SocialMediaEnhancer();
+                console.log('Social media enhancer initialized successfully');
+            } catch (error) {
+                console.error('Failed to initialize social media enhancer:', error);
+            }
             
             // Preload critical images
             await this.preloadCriticalImages();
@@ -46,6 +64,11 @@ class TVPApplication {
             
             this.isInitialized = true;
             console.log('Tac Visual Prints website initialized successfully');
+            
+            // Test chatbot after initialization
+            setTimeout(() => {
+                this.testChatbot();
+            }, 1000);
             
         } catch (error) {
             console.error('Error initializing website:', error);
@@ -66,6 +89,55 @@ class TVPApplication {
         }, CONFIG.debounceDelay);
         
         window.addEventListener('scroll', handleScroll);
+    }
+
+    // ===== MOBILE MENU =====
+    initializeMobileMenu() {
+        const mobileMenuBtn = getElementById('mobile-menu-btn');
+        const mobileMenu = getElementById('mobile-menu');
+        
+        if (!mobileMenuBtn || !mobileMenu) return;
+        
+        let isMenuOpen = false;
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('-translate-y-full');
+                mobileMenu.classList.add('translate-y-0');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-times text-xl"></i>';
+                mobileMenuBtn.setAttribute('aria-label', 'Close mobile menu');
+            } else {
+                mobileMenu.classList.add('-translate-y-full');
+                mobileMenu.classList.remove('translate-y-0');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars text-xl"></i>';
+                mobileMenuBtn.setAttribute('aria-label', 'Open mobile menu');
+            }
+        });
+        
+        // Close menu when clicking on links
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                isMenuOpen = false;
+                mobileMenu.classList.add('-translate-y-full');
+                mobileMenu.classList.remove('translate-y-0');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars text-xl"></i>';
+                mobileMenuBtn.setAttribute('aria-label', 'Open mobile menu');
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (isMenuOpen && !mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                isMenuOpen = false;
+                mobileMenu.classList.add('-translate-y-full');
+                mobileMenu.classList.remove('translate-y-0');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars text-xl"></i>';
+                mobileMenuBtn.setAttribute('aria-label', 'Open mobile menu');
+            }
+        });
     }
 
     // ===== SMOOTH SCROLLING =====
@@ -295,6 +367,17 @@ class TVPApplication {
 
     isReady() {
         return this.isInitialized;
+    }
+
+    // Test chatbot functionality
+    testChatbot() {
+        if (this.chatbot) {
+            console.log('Testing chatbot functionality...');
+            console.log('Chatbot visible:', this.chatbot.isVisible());
+            console.log('Chatbot message history:', this.chatbot.getMessageHistory());
+            return true;
+        }
+        return false;
     }
 
     destroy() {

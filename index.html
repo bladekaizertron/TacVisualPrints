@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tac Visual Prints - Professional Printing Solutions</title>
-    <meta name="description" content="Professional printing services including sublimation, tarpaulin printing, custom t-shirts, event backdrops, and signage solutions.">
-    <meta name="keywords" content="printing, sublimation, tarpaulin, t-shirts, backdrops, signage, DTF printing">
+    <meta name="description" content="TVP Printing Shop is your one-stop destination for high-quality sublimation and tarpaulin printing. We specialize in creating durable, vibrant, and customized prints perfect for personal, business, and event needs.">
+    <meta name="keywords" content="sublimation printing, tarpaulin printing, jerseys, uniforms, corporate shirts, banners, signage, custom prints, TVP Printing Shop">
     
     <!-- External Resources -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -170,6 +170,13 @@
         .social-icon:nth-child(3) { animation-delay: 0.3s; }
         .social-icon:nth-child(4) { animation-delay: 0.4s; }
         
+        /* Social Media Icons Container */
+        .social-media-icons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .social-media-icons {
@@ -209,14 +216,32 @@
     <nav id="navbar" class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur supports-backdrop-blur:border-b border-white/20 transition-shadow">
         <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-2">
             <a href="#home" class="flex items-center gap-3">
-                <img src="assets/images/logo.svg" alt="Tac Visual Prints Logo" class="logo h-12 w-auto">
+                <img src="assets/images/logo.png" alt="Tac Visual Prints Logo" class="logo h-12 w-auto">
             </a>
+            
+            <!-- Desktop Navigation -->
             <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-700">
                 <li><a class="hover:text-tvp-primary" href="#home">Home</a></li>
                 <li><a class="hover:text-tvp-primary" href="#services">Services</a></li>
-                <li><a class="hover:text-tvp-primary" href="#portfolio">Portfolio</a></li>
+                <li><a class="hover:text-tvp-primary" href="#https://sites.google.com/view/webtacvisualprints/">Portfolio</a></li>
                 <li><a class="hover:text-tvp-primary" href="#about">About</a></li>
                 <li><a class="hover:text-tvp-primary" href="#contact">Contact</a></li>
+            </ul>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-700 hover:text-tvp-primary transition-colors" aria-label="Toggle mobile menu">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="md:hidden bg-white border-t border-slate-200 shadow-lg transform -translate-y-full transition-transform duration-300 ease-in-out">
+            <ul class="px-6 py-4 space-y-4">
+                <li><a class="block text-slate-700 hover:text-tvp-primary font-medium" href="#home">Home</a></li>
+                <li><a class="block text-slate-700 hover:text-tvp-primary font-medium" href="#services">Services</a></li>
+                <li><a class="block text-slate-700 hover:text-tvp-primary font-medium" href="https://sites.google.com/view/webtacvisualprints/">Portfolio</a></li>
+                <li><a class="block text-slate-700 hover:text-tvp-primary font-medium" href="#about">About</a></li>
+                <li><a class="block text-slate-700 hover:text-tvp-primary font-medium" href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -265,7 +290,7 @@
             
             <!-- Subtitle -->
             <p class="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
-                Transform your ideas into <span class="text-tvp-accent font-semibold">stunning visual masterpieces</span> with our cutting-edge printing technology and expert craftsmanship.
+                Your one-stop destination for <span class="text-tvp-accent font-semibold">high-quality sublimation and tarpaulin printing</span>. We create durable, vibrant, and customized prints perfect for personal, business, and event needs.
             </p>
             
             <!-- CTA Buttons -->
@@ -339,7 +364,7 @@
                 </h2>
                 
                 <p class="text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto">
-                    Transform your ideas into <span class="text-tvp-accent font-semibold">stunning visual masterpieces</span> with our cutting-edge printing technology, premium materials, and expert craftsmanship.
+                    From jerseys, uniforms, and corporate shirts to banners, signage, and tarpaulins – we deliver <span class="text-tvp-accent font-semibold">professional-grade results at affordable prices</span> with modern printing technology and excellent service.
                 </p>
             </div>
             
@@ -672,9 +697,9 @@
                 <!-- About Content -->
                 <div class="space-y-8">
                     <div class="space-y-6">
-                        <h3 class="text-3xl font-bold text-slate-900">Why Choose Tac Visual Prints?</h3>
+                        <h3 class="text-3xl font-bold text-slate-900">Why Choose TVP Printing Shop?</h3>
                         <p class="text-lg text-slate-600 leading-relaxed">
-                            We're not just another printing company. We're your creative partners, dedicated to transforming your ideas into stunning visual masterpieces that make a lasting impact.
+                            We're your one-stop destination for high-quality printing solutions. Specializing in sublimation and tarpaulin printing, we create durable, vibrant, and customized prints that bring your vision to life with precision and style.
                         </p>
                     </div>
                     
@@ -686,7 +711,7 @@
                             </div>
                             <div>
                                 <h4 class="text-xl font-bold text-slate-900 mb-2">Premium Quality</h4>
-                                <p class="text-slate-600">State-of-the-art equipment and premium materials for superior results that exceed expectations.</p>
+                                <p class="text-slate-600">Modern printing technology delivering durable, vibrant, and professional-grade results for all your printing needs.</p>
                             </div>
                         </div>
                         
@@ -695,8 +720,8 @@
                                 <i class="fas fa-clock text-xl text-white"></i>
                             </div>
                             <div>
-                                <h4 class="text-xl font-bold text-slate-900 mb-2">Fast Turnaround</h4>
-                                <p class="text-slate-600">Quick delivery without compromising on quality. We understand the importance of meeting deadlines.</p>
+                                <h4 class="text-xl font-bold text-slate-900 mb-2">Affordable Prices</h4>
+                                <p class="text-slate-600">Professional-grade printing services at competitive prices, making quality accessible for everyone.</p>
                             </div>
                         </div>
                         
@@ -705,8 +730,8 @@
                                 <i class="fas fa-users text-xl text-white"></i>
                             </div>
                             <div>
-                                <h4 class="text-xl font-bold text-slate-900 mb-2">Expert Team</h4>
-                                <p class="text-slate-600">Skilled professionals with years of experience, dedicated to bringing your vision to life.</p>
+                                <h4 class="text-xl font-bold text-slate-900 mb-2">Excellent Service</h4>
+                                <p class="text-slate-600">Committed to providing outstanding customer service, ensuring every design comes to life with precision and style.</p>
                             </div>
                         </div>
                     </div>
@@ -769,7 +794,7 @@
                         </div>
                         <h3 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Our Mission</h3>
                         <p class="text-xl text-slate-600 leading-relaxed mb-10 max-w-4xl mx-auto">
-                            To empower businesses and individuals with high-quality, innovative printing solutions that make a lasting impression. We believe every project deserves exceptional attention to detail and professional craftsmanship that exceeds expectations.
+                            To be your trusted one-stop destination for high-quality printing solutions. We specialize in creating durable, vibrant, and customized prints perfect for personal, business, and event needs, delivering professional-grade results at affordable prices with modern technology and excellent service.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-6 justify-center">
                             <a href="#services" class="group relative bg-gradient-to-r from-tvp-primary to-tvp-secondary rounded-2xl p-1">
@@ -850,7 +875,7 @@
                 <!-- Contact Form -->
                 <div class="relative">
                     <div class="absolute inset-0 bg-gradient-to-br from-tvp-primary/20 to-tvp-secondary/20 rounded-3xl blur-xl"></div>
-                    <form id="contactForm" class="relative bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
+                    <form action="https://formsubmit.co/web.tacvisualprints@gmail.com" class="relative bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20 shadow-2xl">
                         <div class="space-y-6">
                             <div class="grid md:grid-cols-2 gap-6">
                                 <div>
@@ -886,6 +911,61 @@
         </div>
     </section>
 
+    <!-- Google Maps Location Section -->
+    <section id="location" class="py-24 bg-white relative overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-20 right-20 w-96 h-96 bg-tvp-primary rounded-full blur-3xl animate-pulse-slow"></div>
+            <div class="absolute bottom-20 left-20 w-80 h-80 bg-tvp-secondary rounded-full blur-3xl animate-pulse-slow animation-delay-2000"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-flex items-center px-4 py-2 rounded-full bg-tvp-primary/10 border border-tvp-primary/20 mb-6">
+                    <i class="fas fa-map-marker-alt text-tvp-primary mr-2"></i>
+                    <span class="text-sm font-medium text-tvp-primary">Visit Us</span>
+                </div>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-6">
+                    <span class="bg-gradient-to-r from-slate-900 via-tvp-primary to-slate-700 bg-clip-text text-transparent">
+                        Find Our Location
+                    </span>
+                </h2>
+                <p class="text-lg text-slate-600 leading-relaxed">
+                    Visit our shop to see our printing services in action and discuss your project needs in person.
+                </p>
+            </div>
+            
+            <!-- Map Container -->
+            <div class="max-w-5xl mx-auto" data-aos="fade-up">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-br from-tvp-primary/20 to-tvp-secondary/20 rounded-3xl blur-xl"></div>
+                    <div class="relative bg-white rounded-3xl overflow-hidden shadow-2xl border border-slate-200">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.38317586464!2d124.98824149999999!3d11.233197599999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3308770045cb203d%3A0xae7d370e1ffdb2aa!2sTAC%20VISUAL%20PRINTS%20(TVP)!5e0!3m2!1sen!2sph!4v1761366185018!5m2!1sen!2sph"
+                            width="100%" 
+                            height="500" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Tac Visual Prints Location">
+                        </iframe>
+                    </div>
+                </div>
+                
+                <!-- Get Directions Button -->
+                <div class="text-center mt-8">
+                    <a href="https://maps.app.goo.gl/pFRGZvQji4osPyGu6" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-tvp-primary to-tvp-secondary text-white rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                        <i class="fas fa-directions text-xl"></i>
+                        <span>Get Directions</span>
+                        <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-16 relative overflow-hidden">
         <!-- Background Elements -->
@@ -899,10 +979,10 @@
                 <!-- Company Info -->
                 <div class="md:col-span-2">
                     <div class="flex items-center gap-3 mb-4">
-                        <img src="assets/images/footer-logo.svg" alt="Tac Visual Prints Logo" class="logo h-24 w-auto">
+                        <img src="assets/images/footer-logo.png" alt="Tac Visual Prints Logo" class="logo h-24 w-auto">
                     </div>
                     <p class="text-slate-400 leading-relaxed mb-6">
-                        Professional printing solutions for all your visual needs. From sublimation to signage, we deliver exceptional quality with cutting-edge technology and expert craftsmanship.
+                        TVP Printing Shop is your one-stop destination for high-quality sublimation and tarpaulin printing. From jerseys, uniforms, and corporate shirts to banners, signage, and tarpaulins, we deliver professional-grade results at affordable prices with modern printing technology and excellent service.
                     </p>
                     <div class="social-media-icons">
                         <a href="https://facebook.com/tacvisualprints" target="_blank" rel="noopener noreferrer" class="social-icon social-icon--facebook" aria-label="Follow us on Facebook">
@@ -996,21 +1076,23 @@
             <div class="chat-body" id="chatBody">
                 <div class="message bot">
                     <div class="bubble">
-                        Hello! Welcome to Tac Visual Prints! 👋<br><br>
-                        I'm your personal printing assistant. I can help you with:
-                        <br>• <strong>Instant quotes</strong> - Get pricing quickly
-                        <br>• <strong>Service explanations</strong> - Learn about our offerings
-                        <br>• <strong>Technical questions</strong> - DTF, sublimation, materials
-                        <br>• <strong>Order planning</strong> - Timeline and requirements
-                        <br>• <strong>Design support</strong> - File formats and artwork help
-                        <br><br><strong>How can I assist you today?</strong>
-                        <div class="suggested">
-                            <button class="suggestion">Get a quote</button>
-                            <button class="suggestion">Our services</button>
-                            <button class="suggestion">Turnaround time</button>
-                            <button class="suggestion">DTF printing</button>
-                            <button class="suggestion">Contact info</button>
-                        </div>
+                        <div style="margin-bottom: 12px;">Hello! Welcome to Tac Visual Prints! 👋</div>
+                        <div style="margin-bottom: 8px;">I'm your personal printing assistant. I can help you with:</div>
+                        <ul style="margin: 8px 0; padding-left: 20px; list-style: none;">
+                            <li style="margin-bottom: 6px;">• <strong>Instant quotes</strong> - Get pricing quickly</li>
+                            <li style="margin-bottom: 6px;">• <strong>Service explanations</strong> - Learn about our offerings</li>
+                            <li style="margin-bottom: 6px;">• <strong>Technical questions</strong> - DTF, sublimation, materials</li>
+                            <li style="margin-bottom: 6px;">• <strong>Order planning</strong> - Timeline and requirements</li>
+                            <li style="margin-bottom: 6px;">• <strong>Design support</strong> - File formats and artwork help</li>
+                        </ul>
+                        <div style="margin-top: 12px;"><strong>How can I assist you today?</strong></div>
+                    </div>
+                    <div class="suggested">
+                        <button class="suggestion">Get a quote</button>
+                        <button class="suggestion">Our services</button>
+                        <button class="suggestion">Turnaround time</button>
+                        <button class="suggestion">DTF printing</button>
+                        <button class="suggestion">Contact info</button>
                     </div>
                 </div>
             </div>

@@ -25,10 +25,20 @@ export class TVPChatbot {
         this.chatForm = getElementById('chatForm');
         this.chatInput = getElementById('chatInput');
         this.openMessengerBtn = getElementById('openMessenger');
+        
+        // Add initial animation to chat toggle
+        if (this.chatToggle) {
+            setTimeout(() => {
+                this.chatToggle.classList.add('animate');
+            }, 2000);
+        }
     }
 
     initializeEventListeners() {
-        if (!this.chatToggle || !this.chatWindow) return;
+        if (!this.chatToggle || !this.chatWindow) {
+            console.error('Chatbot: Required elements not found');
+            return;
+        }
 
         // Toggle open/close
         this.chatToggle.addEventListener('click', () => this.toggleChat());
@@ -107,6 +117,11 @@ export class TVPChatbot {
         this.isMinimized = false;
         this.chatWindow.classList.add('open');
         this.chatWindow.classList.remove('minimized');
+        
+        // Stop the bounce animation when chat is opened
+        if (this.chatToggle) {
+            this.chatToggle.classList.remove('animate');
+        }
         
         setTimeout(() => {
             if (this.chatInput) {
@@ -282,6 +297,9 @@ export class TVPChatbot {
         const pageId = CONFIG.facebookPageId || 'YOUR_FACEBOOK_PAGE_ID';
         const url = `https://m.me/${pageId}`;
         window.open(url, '_blank');
+        
+        // Announce to screen reader
+        announceToScreenReader('Opening Messenger');
     }
 
     // ===== PUBLIC METHODS =====
