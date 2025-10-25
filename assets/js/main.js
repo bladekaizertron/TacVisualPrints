@@ -24,6 +24,9 @@ class TVPApplication {
         try {
             console.log('Initializing Tac Visual Prints website...');
             
+            // Remove Facebook Messenger widgets immediately
+            this.removeFacebookMessengerWidgets();
+            
             // Initialize core components
             this.initializeNavbar();
             this.initializeMobileMenu();
@@ -73,6 +76,65 @@ class TVPApplication {
         } catch (error) {
             console.error('Error initializing website:', error);
         }
+    }
+
+    // ===== REMOVE FACEBOOK MESSENGER WIDGETS =====
+    removeFacebookMessengerWidgets() {
+        // Function to remove Facebook elements
+        const removeFBElements = () => {
+            // Remove all Facebook iframes
+            const fbIframes = document.querySelectorAll('iframe[src*="facebook.com"], iframe[src*="messenger.com"]');
+            fbIframes.forEach(iframe => iframe.remove());
+            
+            // Remove Facebook root element
+            const fbRoot = document.getElementById('fb-root');
+            if (fbRoot) fbRoot.remove();
+            
+            // Remove all elements with Facebook class names
+            const fbElements = document.querySelectorAll('[class*="fb_"], [class*="fb-"], [id*="facebook"]');
+            fbElements.forEach(el => el.remove());
+            
+            // Remove customer chat elements
+            const chatElements = document.querySelectorAll('[data-testid*="CustomerChat"], .fb-customerchat, .fb_dialog');
+            chatElements.forEach(el => el.remove());
+        };
+        
+        // Remove immediately
+        removeFBElements();
+        
+        // Watch for new Facebook elements being added
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                mutation.addedNodes.forEach((node) => {
+                    if (node.nodeType === 1) { // Element node
+                        // Check if it's a Facebook element
+                        if (node.id === 'fb-root' || 
+                            node.className?.toString().includes('fb_') ||
+                            node.className?.toString().includes('fb-') ||
+                            (node.tagName === 'IFRAME' && 
+                             (node.src?.includes('facebook.com') || node.src?.includes('messenger.com')))) {
+                            node.remove();
+                            console.log('Removed Facebook widget:', node);
+                        }
+                        
+                        // Check children
+                        const fbChildren = node.querySelectorAll?.('[class*="fb_"], [class*="fb-"], iframe[src*="facebook.com"], iframe[src*="messenger.com"]');
+                        fbChildren?.forEach(child => child.remove());
+                    }
+                });
+            });
+        });
+        
+        // Start observing
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+        
+        // Also run periodically as a backup
+        setInterval(removeFBElements, 1000);
+        
+        console.log('Facebook Messenger widget blocker activated');
     }
 
     // ===== NAVBAR FUNCTIONALITY =====
